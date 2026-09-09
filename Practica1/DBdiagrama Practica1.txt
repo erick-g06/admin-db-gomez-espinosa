@@ -1,0 +1,22 @@
+Table usuarios{
+  id_usuarios integer [primary key]
+  nombre varchar
+  email varchar
+  created_at timestamp
+}
+
+Table libros{
+  id_libro integer [primary key]
+  titulo varchar
+  autor varchar
+}
+
+Table prestamos{
+  id_prestamos integer [primary key]
+  id_usuarios integer [not null]
+  id_libro integer [not null]
+  fecha_prestamo date
+}
+
+Ref: prestamos.id_usuarios > usuarios.id_usuarios
+Ref: prestamos.id_libro > libros.id_libro
