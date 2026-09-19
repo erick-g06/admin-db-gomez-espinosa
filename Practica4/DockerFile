@@ -1,0 +1,7 @@
+FROM mysql:8.0
+
+# scripts SQL de inicialización.
+COPY ./scripts/1_crear.sql /docker-entrypoint-initdb.d/
+COPY ./scripts/2_tablas.sql /docker-entrypoint-initdb.d/
+COPY ./scripts/3_datos.sql /docker-entrypoint-initdb.d/
+COPY ./transacciones/ /scripts/
